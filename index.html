@@ -3,73 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZnDic - 搜索有趣词条</title>
+    <title>网站</title>
     <style>
         body {
-            background-color: white; /* Set background color to white */
-            font-family: Arial, sans-serif;
+            background-color: white;
         }
-
-        #header {
-            text-align: center; /* Center the header content */
-            margin-bottom: 20px; /* Add margin below the header */
-        }
-
-        #header h1 {
-            color: green; /* Set header text color to green */
-            font-family: cursive; /* Use a cursive font for the header */
-            font-size: 48px; /* Increase header text size */
-        }
-
-        #contact-button {
-            position: fixed; /* Fix the contact button to the top-right */
+        #contactBtn {
+            position: fixed;
             top: 20px;
             right: 20px;
-            padding: 10px 20px;
-            background-color: #eee;
-            border: none;
-            border-radius: 5px; /* Add rounded corners to the button */
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            padding: 5px 10px;
             cursor: pointer;
         }
-
-        #contact-info {
-            display: none; /* Initially hide the contact info */
+        #topHeader {
+            text-align: center;
+            color: green;
+            font-family: 'ZnDic', cursive;
+        }
+        #searchBox {
             position: fixed;
             top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Center the contact info */
-            background-color: white;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px; /* Add rounded corners to the contact info */
-            z-index: 10; /* Ensure the contact info is on top */
+            right: 20px;
+            transform: translateY(-50%);
+            display: none;
+        }
+        #searchInput {
+            padding: 5px;
+            width: 150px;
+        }
+        #searchBtn {
+            padding: 5px 10px;
+            background-color: lightblue;
+            border: none;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div id="header">
-        <h1>ZnDic</h1>
+    <div id="contactBtn" onclick="showContact()">联系方式</div>
+    <div id="topHeader">绿色手写体“ZnDic”</div>
+    
+    <div id="searchBox">
+        <input type="text" id="searchInput" placeholder="搜索...">
+        <button id="searchBtn" onclick="search()">搜索</button>
     </div>
 
-    <div id="contact-button">Contact</div>
-    <div id="contact-info">
-        <h2>联系开发者</h2>
-        <p>电子邮件: b3107203728@outlook.com</p >
-        <button id="close-contact-info">关闭窗口</button>
-    </div>
+    <div id="result"></div>
 
     <script>
-        const contactButton = document.getElementById('contact-button');
-        const contactInfo = document.getElementById('contact-info');
-        const closeContactInfoButton = document.getElementById('close-contact-info');
+        function showContact() {
+            alert("b3107203728@outlook.com");
+        }
 
-        contactButton.addEventListener('click', () => {
-            contactInfo.style.display = 'block';
-        });
-
-        closeContactInfoButton.addEventListener('click', () => {
-            contactInfo.style.display = 'none';
-        });
+        function search() {
+            var searchTerm = document.getElementById("searchInput").value;
+            if (searchTerm === "关公" || searchTerm === "元首") {
+                document.getElementById("result").innerHTML = "<h1>关公</h1><p style='color: grey; font-style: italic;'>元首或缪缪均重定向至此。</p ><p>但好烦😫？</p >";
+            } else {
+                alert("未找到相关结果。");
+            }
+        }
     </script>
 </body>
 </html>
