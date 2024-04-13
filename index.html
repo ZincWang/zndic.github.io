@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>网站</title>
+    <title>搜索站内词条</title>
     <style>
         body {
             background-color: white;
@@ -27,7 +27,7 @@
             top: 50%;
             right: 20px;
             transform: translateY(-50%);
-            display: none;
+            transition: right 0.5s ease;
         }
         #searchInput {
             padding: 5px;
@@ -46,7 +46,7 @@
 </head>
 <body>
     <div id="contactBtn" onclick="showContact()">联系方式</div>
-    <div id="topHeader">绿色手写体“ZnDic”</div>
+    <div id="topHeader">“ZnDic”</div>
     
     <div id="searchBox">
         <input type="text" id="searchInput" placeholder="搜索...">
@@ -56,8 +56,12 @@
     <div id="result"></div>
 
     <script>
+        setTimeout(function() {
+            document.getElementById("searchBox").style.right = "50%";
+        }, 500); // 0.5秒后搜索框和按钮从右端滑动到中央
+
         function showContact() {
-            alert("b3107203728@outlook.com");
+            alert("电子邮件：b3107203728@outlook.com");
         }
 
         function search() {
