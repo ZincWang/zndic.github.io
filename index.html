@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZnDic - Online Dictionary</title>
+    <style>
+        body {
+            background-color: white; /* Set background color to white */
+            font-family: Arial, sans-serif;
+        }
 
+        #header {
+            text-align: center; /* Center the header content */
+            margin-bottom: 20px; /* Add margin below the header */
+        }
+
+        #header h1 {
+            color: green; /* Set header text color to green */
+            font-family: cursive; /* Use a cursive font for the header */
+            font-size: 48px; /* Increase header text size */
+        }
+
+        #contact-button {
+            position: fixed; /* Fix the contact button to the top-right */
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #eee;
+            border: none;
+            border-radius: 5px; /* Add rounded corners to the button */
+            cursor: pointer;
+        }
+
+        #contact-info {
+            display: none; /* Initially hide the contact info */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the contact info */
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px; /* Add rounded corners to the contact info */
+            z-index: 10; /* Ensure the contact info is on top */
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>ZnDic</h1>
+    </div>
+
+    <div id="contact-button">Contact</div>
+    <div id="contact-info">
+        <h2>Contact Developer</h2>
+        <p>Email: b3107203728@outlook.com</p >
+        <button id="close-contact-info">Close</button>
+    </div>
+
+    <script>
+        const contactButton = document.getElementById('contact-button');
+        const contactInfo = document.getElementById('contact-info');
+        const closeContactInfoButton = document.getElementById('close-contact-info');
+
+        contactButton.addEventListener('click', () => {
+            contactInfo.style.display = 'block';
+        });
+
+        closeContactInfoButton.addEventListener('click', () => {
+            contactInfo.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
